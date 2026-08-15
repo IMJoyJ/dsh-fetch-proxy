@@ -62,9 +62,12 @@ setGlobalDispatcher(new ProxyAgent(url))   ← host half, applied at mount + on 
 HTTP(S) forward proxy (e.g. http://127.0.0.1:13580)
 ```
 
-`undici@6.21.2` is pinned to Node 22.18's bundled undici so
+`undici@8.9.0` is pinned to **node 26.7.0's built-in undici** so
 `Symbol.for('undici.globalDispatcher.1')` is shared between the external
-package and the native fetch.
+package and the native fetch. `setGlobalDispatcher` only affects the native
+fetch when the npm undici and node's built-in undici share that global-symbol
+contract, so this pin must track the running node's `process.versions.undici`
+(after a node upgrade, check it and bump this dependency to match).
 
 ## Development
 
