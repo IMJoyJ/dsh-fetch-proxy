@@ -47,8 +47,8 @@ Settings namespace `fetch-proxy`:
 | `proxyUrl` | `http://127.0.0.1:13580` | HTTP(S) forward proxy URL |
 | `enabled` | `true` | `false` restores the default dispatcher (direct connect) |
 
-`cordis.patch.yml` supplies the base; `settings.yaml` (or the settings card)
-overrides it live.
+`cordis.patch.yml` supplies the base; the Plugins-page card (or a profile
+patch edit) overrides it live without a remount.
 
 ## How it works
 
